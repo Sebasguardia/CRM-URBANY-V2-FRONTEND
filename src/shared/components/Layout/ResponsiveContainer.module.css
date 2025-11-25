@@ -1,0 +1,31 @@
+.responsiveContainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.containerSmall {
+  max-width: 640px;
+}
+
+.containerMedium {
+  max-width: 768px;
+}
+
+.containerLarge {
+  max-width: 1024px;
+}
+
+.containerXLarge {
+  max-width: 1280px;
+}
+
+.containerFull {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .responsiveContainer {
+    padding: 0 12px;
+  }
+}

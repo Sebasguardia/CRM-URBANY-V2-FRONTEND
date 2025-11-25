@@ -1,0 +1,95 @@
+.statusContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusSmall {
+  gap: 4px;
+}
+
+.statusMedium {
+  gap: 6px;
+}
+
+.statusLarge {
+  gap: 8px;
+}
+
+.statusDot {
+  border-radius: 9999px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.statusSmall .statusDot {
+  width: 8px;
+  height: 8px;
+}
+
+.statusMedium .statusDot {
+  width: 10px;
+  height: 10px;
+}
+
+.statusLarge .statusDot {
+  width: 12px;
+  height: 12px;
+}
+
+.statusActive {
+  background-color: var(--color-success);
+}
+
+.statusInactive {
+  background-color: var(--color-gray-400);
+}
+
+.statusPending {
+  background-color: var(--color-warning);
+}
+
+.statusCompleted {
+  background-color: var(--color-success);
+}
+
+.statusCancelled {
+  background-color: var(--color-danger);
+}
+
+.statusNew {
+  background-color: var(--color-info);
+}
+
+.statusContacted {
+  background-color: var(--color-primary);
+}
+
+.statusValuation {
+  background-color: var(--color-warning);
+}
+
+.statusVisited {
+  background-color: var(--color-primary);
+}
+
+.statusOffer {
+  background-color: var(--color-success);
+}
+
+.statusClosed {
+  background-color: var(--color-success);
+}
+
+.statusText {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.statusSmall .statusText {
+  font-size: 12px;
+}
+
+.statusLarge .statusText {
+  font-size: 16px;
+}

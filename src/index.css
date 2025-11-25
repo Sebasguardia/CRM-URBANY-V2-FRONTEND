@@ -1,0 +1,32 @@
+:root {
+  /* Colores principales */
+  --color-primary: #3b82f6;
+  --color-primary-light: #dbeafe;
+  --color-primary-dark: #1d4ed8;
+  
+  /* Estados */
+  --color-success: #10b981;
+  --color-success-light: #d1fae5;
+  --color-success-dark: #047857;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fef3c7;
+  --color-warning-dark: #d97706;
+  --color-danger: #ef4444;
+  --color-danger-light: #fee2e2;
+  --color-danger-dark: #b91c1c;
+  --color-info: #06b6d4;
+  --color-info-light: #cffafe;
+  --color-info-dark: #0891b2;
+  
+  /* Neutros */
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-border: #e5e7eb;
+  --color-background: #ffffff;
+  --color-hover: #f9fafb;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-700: #374151;
+  --color-gray-900: #111827;
+}

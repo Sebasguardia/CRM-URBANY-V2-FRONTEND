@@ -1,0 +1,124 @@
+.datePickerContainer {
+  position: relative;
+  width: 100%;
+}
+
+.datePickerInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-background);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.datePickerInput:hover {
+  border-color: var(--color-primary);
+}
+
+.calendarIcon {
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.dateValue {
+  color: var(--color-text-primary);
+  font-size: 14px;
+}
+
+.calendarDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  padding: 12px;
+}
+
+.calendarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.calendarHeader button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.calendarHeader button:hover {
+  background-color: var(--color-hover);
+}
+
+.monthYear {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.dayHeader {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  padding: 8px 0;
+}
+
+.dayCell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.dayCell:hover:not(:disabled) {
+  background-color: var(--color-hover);
+}
+
+.dayCell:disabled {
+  cursor: default;
+  color: transparent;
+}
+
+.dayCell.selected {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.dateRangeContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rangeSeparator {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}

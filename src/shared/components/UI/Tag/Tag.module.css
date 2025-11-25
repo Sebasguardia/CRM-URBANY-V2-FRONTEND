@@ -1,0 +1,67 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tagSmall {
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.tagMedium {
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.tagLarge {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.tagDefault {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-700);
+}
+
+.tagPrimary {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.tagSuccess {
+  background-color: var(--color-success-light);
+  color: var(--color-success-dark);
+}
+
+.tagWarning {
+  background-color: var(--color-warning-light);
+  color: var(--color-warning-dark);
+}
+
+.tagDanger {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger-dark);
+}
+
+.tagLabel {
+  white-space: nowrap;
+}
+
+.tagRemove {
+  background: none;
+  border: none;
+  color: currentColor;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 2px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.tagRemove:hover {
+  opacity: 1;
+}
