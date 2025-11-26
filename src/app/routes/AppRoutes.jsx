@@ -1,5 +1,5 @@
 // src/app/routes/AppRoutes.jsx
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
 
 /**
@@ -7,37 +7,32 @@ import MainLayout from '../../shared/components/Layout/MainLayout';
  */
 export default function AppRoutes() {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/* Rutas de autenticación sin layout */}
-        <Route path="/auth/login" element={<LoginPage />} />
-        <Route path="/auth/register" element={<RegisterPage />} />
+    <Routes>
+      {/* Rutas de autenticación sin layout */}
+      <Route path="/auth/login" element={<LoginPage />} />
+      <Route path="/auth/register" element={<RegisterPage />} />
 
-        {/* Rutas principales con layout principal */}
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<Navigate to="/dashboard" replace />} />
-          
-          <Route path="dashboard" element={<DashboardPage />} />
-          <Route path="actividades" element={<ActivitiesPage />} />
-          <Route path="tasaciones" element={<ValuationsPage />} />
-          <Route path="propiedades" element={<PropertiesPage />} />
-          <Route path="propiedades/:id" element={<PropertyDetailPage />} />
-          <Route path="negocios" element={<DealsPage />} />
-          <Route path="negocios/:id" element={<DealDetailPage />} />
-          <Route path="mensajes" element={<MessagesPage />} />
-          <Route path="redes" element={<NetworkPage />} />
-          <Route path="mapas" element={<MapsPage />} />
-          <Route path="emprendimientos" element={<ProjectsPage />} />
-          <Route path="contactos" element={<ContactsPage />} />
-          <Route path="reportes" element={<ReportsPage />} />
-          <Route path="comentarios" element={<FeedbackPage />} />
-          <Route path="configuracion" element={<SettingsPage />} />
-        </Route>
+      {/* Rutas principales con layout principal */}
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Navigate to="/dashboard" replace />} />
 
-        {/* Redirect cualquier ruta no encontrada */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </BrowserRouter>
+        <Route path="dashboard" element={<DashboardPage />} />
+        <Route path="actividades" element={<ActivitiesPage />} />
+        <Route path="tasaciones" element={<ValuationsPage />} />
+        <Route path="propiedades" element={<PropertiesPage />} />
+        <Route path="propiedades/:id" element={<PropertyDetailPage />} />
+        <Route path="negocios" element={<DealsPage />} />
+        <Route path="negocios/:id" element={<DealDetailPage />} />
+        <Route path="mensajes" element={<MessagesPage />} />
+        <Route path="redes" element={<NetworkPage />} />
+        <Route path="mapas" element={<MapsPage />} />
+        <Route path="emprendimientos" element={<ProjectsPage />} />
+        <Route path="contactos" element={<ContactsPage />} />
+        <Route path="reportes" element={<ReportsPage />} />
+        <Route path="comentarios" element={<FeedbackPage />} />
+        <Route path="configuracion" element={<SettingsPage />} />
+      </Route>
+    </Routes>
   );
 }
 

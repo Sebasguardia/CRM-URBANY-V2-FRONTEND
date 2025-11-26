@@ -1,9 +1,14 @@
-import AppRoutes from './app/routes/AppRoutes'
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './app/routes/AppRoutes';
+import ProfileRoutes from './app/routes/ProfileRoutes';
 
 function App() {
   return (
     <div className="App">
-      <AppRoutes />
+      <BrowserRouter>
+        <AppRoutes />
+        <ProfileRoutes />
+      </BrowserRouter>
     </div>
   )
 }
