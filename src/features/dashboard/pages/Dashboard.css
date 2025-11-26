@@ -1,0 +1,90 @@
+.crm-dashboard {
+  padding: 20px;
+  background: #f9fafb;
+}
+
+.top-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.top-filters select {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #dfe4ea;
+  background: #fff;
+  font-size: 14px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 22px;
+}
+
+.big-card {
+  grid-column: span 1;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tabs button {
+  border: none;
+  background: transparent;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  font-size: 14px;
+}
+
+.tabs .active {
+  color: #2a7df1;
+  border-bottom: 2px solid #2a7df1;
+}
+
+.billing-content .label {
+  font-size: 14px;
+  opacity: 0.65;
+}
+
+.billing-content .money {
+  font-size: 36px;
+  margin: 15px 0;
+}
+
+.small-select {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e1e4e8;
+}
+
+.chips {
+  display: flex;
+  gap: 10px;
+}
+
+.chips button {
+  border: 1px solid #dfe3e9;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.active-chip {
+  background: #2a7df1;
+  color: #fff;
+  border-color: #2a7df1;
+}
+
+.chart-card {
+  padding-top: 10px;
+}

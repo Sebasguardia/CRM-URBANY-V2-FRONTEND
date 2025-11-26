@@ -1,0 +1,41 @@
+.cselect {
+  position: relative;
+  width: 180px;
+  font-size: 14px;
+}
+
+.cselect-display {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cselect-arrow {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.cselect-menu {
+  position: absolute;
+  top: 48px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.cselect-option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.cselect-option:hover {
+  background: #f5f5f5;
+}
