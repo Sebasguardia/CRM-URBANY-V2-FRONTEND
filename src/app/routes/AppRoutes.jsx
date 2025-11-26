@@ -1,6 +1,8 @@
 // src/app/routes/AppRoutes.jsx
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
+import Dashboard from "../../features/dashboard/pages/Dashboard";
+
 
 /**
  * Router principal de la aplicación - Versión temporal
@@ -17,7 +19,7 @@ export default function AppRoutes() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Navigate to="/dashboard" replace />} />
           
-          <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="actividades" element={<ActivitiesPage />} />
           <Route path="tasaciones" element={<ValuationsPage />} />
           <Route path="propiedades" element={<PropertiesPage />} />

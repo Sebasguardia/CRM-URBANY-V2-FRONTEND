@@ -9,6 +9,6 @@ export default function TaskCard() {
         <p>No hay actividades pendientes</p>
         <a href="#" style={{ color: "#2a7df1" }}>Ir a mi calendario</a>
       </div>
-    </CardBox>
+    </CardBox>  
   );
 }

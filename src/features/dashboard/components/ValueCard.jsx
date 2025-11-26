@@ -3,17 +3,11 @@ import formatNumber from "../utils/formatNumber";
 
 export default function ValueCard({ value }) {
   return (
-    <CardBox>
-      <h3>💲 Valor de la cartera</h3>
-      <h1
-        style={{
-          fontSize: "32px",
-          fontWeight: "bold",
-          color: "#1ca651",
-        }}
-      >
-        USD {formatNumber(value)}
-      </h1>
+    <CardBox className="value-card-clean">
+      <div className="value-wrapper">
+        <span className="value-label">💲 Valor de la cartera</span>
+        <h1 className="value-amount">USD {formatNumber(value)}</h1>
+      </div>
     </CardBox>
   );
 }
