@@ -1,8 +1,13 @@
+/* ===============================
+   CONTENEDOR GENERAL
+================================*/
 .dashboard-wrapper {
-  padding: 20px 28px;
+  padding: 20px 50px;
 }
 
-/* SELECT SIMULADO */
+/* ===============================
+   SELECTS
+================================*/
 .filter-select {
   padding: 6px 10px;
   border-radius: 8px;
@@ -17,39 +22,89 @@
   margin-bottom: 20px;
 }
 
-/* GRID EXACTO */
+/* ===============================
+   GRID MODIFICADO (3 COLUMNAS)
+================================*/
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+
+  /* 3 columnas iguales */
+  grid-template-columns: 1fr 1fr 1fr;
 
   grid-template-areas:
-    "facturacion tareas valor"
+    "facturacion facturacion facturacion"
+    "valor tareas tareas"
     "obtienes etapa zona";
 
-  gap: 20px;
+  gap: 24px;
 }
 
-/* ÁREAS */
+/* ===============================
+   ÁREAS
+================================*/
 .card-facturacion { grid-area: facturacion; }
-.card-tareas      { grid-area: tareas; }
 .card-valor       { grid-area: valor; }
+.card-tareas      { grid-area: tareas; }
 .card-obtienes    { grid-area: obtienes; }
 .card-etapa       { grid-area: etapa; }
 .card-zona        { grid-area: zona; }
 
-/* CARD */
+/* ===============================
+   CARD BASE
+================================*/
 .card {
-  background: white;
+  background: #ffffff;
   border-radius: 14px;
   border: 1px solid #e5e7eb;
   padding: 20px 22px;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+  transition: 0.2s ease;
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
+}
+
+/* ===============================
+   FACTURACIÓN – MÁS GRANDE
+================================*/
+.card-facturacion {
+  min-height: 620px !important;
+  height: 620px !important;
+  max-height: 620px !important;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 30px;
+}
+
+/* Título + selector */
+.facturacion-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.facturacion-monto {
+  font-size: 46px;
+  margin: 8px 0 20px;
+}
+
+/* Tabs */
+.facturacion-tabs {
+  display: flex;
+  gap: 28px;
+  margin-top: 15px;
 }
 
 .facturacion-tabs button {
   background: none;
   border: none;
-  padding: 10px 15px;
-  font-size: 14px;
+  font-size: 16px;
+  padding: 10px 5px;
   cursor: pointer;
   color: #666;
 }
@@ -59,6 +114,143 @@
   border-bottom: 3px solid #1e6bff;
 }
 
+/* Gráfico más grande */
+.fake-chart,
+.recharts-wrapper {
+  height: 340px !important;
+}
+
+/* ===============================
+   VALOR DE LA CARTERA – MÁS CORTO
+================================*/
+.card-valor {
+  grid-area: valor;
+  height: 200px;
+  min-height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 14px;
+}
+
+.card-tareas {
+  margin-right: 55px !important;
+}
+
+.valor-title {
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.valor-monto {
+  font-size: 42px;                 /* Más grande */
+  margin-top: 8px;
+  color: #16a34a;
+}
+
+
+/* ===============================
+   MIS TAREAS – MUY CORTO Y CENTRADO
+================================*/
+.card-tareas {
+  grid-area: tareas;
+  height: 240px;
+  min-height: 240px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 20px;
+}
+
+.card-tareas .tareas-icon {
+  font-size: 48px;
+  color: #22c55e;  /* verde check */
+  margin-bottom: 10px;
+}
+
+.card-tareas .tareas-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.card-tareas .tareas-sub {
+  font-size: 16px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.card-tareas a {
+  color: #22c55e;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 17px;
+}
+.card-obtienes {
+  grid-area: obtienes;
+  min-height: 260px;
+}
+
+.card-zona {
+  grid-area: zona;
+  min-height: 220px;
+}
+.card-etapa {
+  grid-area: etapa;
+  min-height: 520px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+/* Contenedor interno centrado */
+.tareas-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Icono verde */
+.tareas-icon {
+  font-size: 58px;
+  color: #22c55e;      /* Verde */
+  line-height: 1;
+  font-weight: bold;
+}
+
+/* Texto gris elegante */
+.tareas-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Link estilo CRM (verde) */
+.tareas-link {
+  font-size: 18px;
+  color: #22c55e;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tareas-link:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   CHIPS
+================================*/
 .chips-row {
   display: flex;
   gap: 10px;
@@ -69,8 +261,8 @@
   padding: 6px 14px;
   border-radius: 12px;
   background: #f5f5f5;
-  cursor: pointer;
   border: 1px solid #ddd;
+  cursor: pointer;
 }
 
 .chip.active {
@@ -79,68 +271,9 @@
   border-color: #1e6bff;
 }
 
-/* MONTO */
-.facturacion-monto {
-  font-size: 32px;
-  margin: 10px 0;
-}
-
-/* SIMULACIÓN DEL GRÁFICO */
-.fake-chart {
-  height: 160px;
-  position: relative;
-  border-bottom: 1px solid #ccc;
-}
-
-.fake-chart .line {
-  width: 100%;
-  height: 2px;
-  background: #3b82f6;
-  position: absolute;
-  top: 50%;
-}
-
-.point {
-  width: 10px;
-  height: 10px;
-  background: #3b82f6;
-  border-radius: 50%;
-  position: absolute;
-}
-
-.p1 { left: 20px; top: 60%; }
-.p2 { left: 50%; top: 40%; }
-.p3 { right: 20px; top: 60%; }
-
-/* TAREAS */
-.tareas-content {
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* VALOR CARTERA */
-.valor-title { font-size: 14px; opacity: 0.8; }
-.valor-monto { font-size: 28px; color: #16a34a; }
-
-/* CHIPS */
-.chips-row {
-  display: flex;
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.chip {
-  padding: 5px 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.chip.active {
-  background: #3b82f6;
-  color: white;
-}
-
-/* BARRAS SIMULADAS */
+/* ===============================
+   BARRAS
+================================*/
 .fake-bar-chart {
   display: flex;
   align-items: flex-end;
@@ -157,8 +290,49 @@
   border-radius: 4px 4px 0 0;
 }
 
-/* TEXTO INFORMACIÓN */
+/* ===============================
+   TEXTO AUX
+================================*/
 .text-info {
-  margin-top: 10px;
+  margin-top: 8px;
   opacity: 0.6;
+}
+
+/* Evita que la columna derecha esté pegada al scrollbar */
+.columna-derecha {
+  padding-right: 40px; /* ← SEPARACIÓN RESPECTO AL BORDE DERECHO */
+}
+
+/* Para asegurarnos que TODAS las cards respeten el lado derecho */
+.card {
+  margin-right: 15px;
+}
+
+/* Animación de aparición suave */
+.card {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Animación en cascada automática */
+.card:nth-of-type(1) { animation-delay: 0.05s; }
+.card:nth-of-type(2) { animation-delay: 0.10s; }
+.card:nth-of-type(3) { animation-delay: 0.15s; }
+.card:nth-of-type(4) { animation-delay: 0.20s; }
+.card:nth-of-type(5) { animation-delay: 0.25s; }
+.card:nth-of-type(6) { animation-delay: 0.30s; }
+.card:nth-of-type(7) { animation-delay: 0.35s; }
+.card:nth-of-type(8) { animation-delay: 0.40s; }
+
+/* Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

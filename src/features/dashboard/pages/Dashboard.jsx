@@ -1,53 +1,41 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";  // ⬅️ IMPORTANTE
 import "./Dashboard.css";
 
 import CustomSelect from "../components/CustomSelect";
 import SalesChart from "../components/SalesChart";
 import BusinessStageChart from "../components/BusinessStageChart";
 
-
 export default function Dashboard() {
+  const navigate = useNavigate(); // ⬅️ HOOK PARA REDIRECCIONAR
+
   const [facturacionTab, setFacturacionTab] = useState("facturacion");
   const [negociosFilter, setNegociosFilter] = useState("todos");
 
   return (
     <div className="dashboard-wrapper">
-
       <div className="filters-row">
-        <CustomSelect 
-          options={["USD", "PEN/S"]}
-          defaultValue="USD"
-        />
+        <CustomSelect options={["USD", "PEN/S"]} defaultValue="USD" />
 
-        <CustomSelect 
+        <CustomSelect
           options={["Elige un agente", "Todos", "Juan Pérez", "María"]}
           defaultValue="Elige un agente"
         />
 
-        <CustomSelect 
-          options={[
-            "Últ. trimestre", 
-            "Último mes", 
-            "Esta semana", 
-            "Este año"
-          ]}
+        <CustomSelect
+          options={["Últ. trimestre", "Último mes", "Esta semana", "Este año"]}
           defaultValue="Últ. trimestre"
         />
       </div>
 
       <div className="dashboard-grid">
-
+        {/* === FACTURACIÓN === */}
         <div className="card card-facturacion">
-
           <div className="facturacion-header">
             <span className="fact-title-left">Ventas concretadas</span>
 
-            <CustomSelect 
-              options={[
-                "Mostrar último trimestre",
-                "Último mes",
-                "Este año"
-              ]}
+            <CustomSelect
+              options={["Mostrar último trimestre", "Último mes", "Este año"]}
               defaultValue="Mostrar último trimestre"
             />
           </div>
@@ -85,29 +73,44 @@ export default function Dashboard() {
           )}
         </div>
 
+        {/* === MIS TAREAS DE HOY === */}
         <div className="card card-tareas">
-          <h3 className="card-title">📅 Mis tareas de hoy</h3>
+          <div className="tareas-center">
+            <p className="tareas-text">Mis Tareas de Hoy</p>
+            <div className="tareas-icon">✔</div>
 
-          <div className="tareas-content">
-            <p>✔ No hay actividades pendientes</p>
-            <a href="#">Ir a mi calendario</a>
+            <p className="tareas-text">No hay actividades pendientes</p>
+
+            {/* BOTÓN REDIRECCIONANDO A ACTIVIDADES */}
+            <button
+              className="tareas-link"
+              onClick={() => navigate("/actividades")}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                marginTop: "8px",
+              }}
+            >
+              Ir a mi calendario
+            </button>
           </div>
         </div>
 
+        {/* === VALOR DE LA CARTERA === */}
         <div className="card card-valor">
           <h3 className="valor-title">💲 Valor de la cartera</h3>
-          <h1 className="valor-monto">USD 180,000</h1>
+          <h1 className="valor-monto">
+            <center>USD 180,000</center>
+          </h1>
         </div>
 
+        {/* === ¿CÓMO OBTIENES NEGOCIOS? === */}
         <div className="card card-obtienes">
           <h3 className="card-title">¿Cómo obtienes negocios?</h3>
 
-          <CustomSelect 
-            options={[
-              "Últ. trimestre",
-              "Último mes",
-              "Último año"
-            ]}
+          <CustomSelect
+            options={["Últ. trimestre", "Último mes", "Último año"]}
             defaultValue="Últ. trimestre"
           />
 
@@ -137,11 +140,12 @@ export default function Dashboard() {
           <p className="text-info">Negocios creados (simulado)</p>
         </div>
 
+        {/* === NEGOCIO ABIERTO POR ETAPA === */}
         <div className="card card-etapa">
           <div className="header-flex">
             <h3 className="card-title">Negocio abierto por etapa</h3>
 
-            <CustomSelect 
+            <CustomSelect
               options={["Diario", "Semanal", "Mensual", "Trimestral", "Anual"]}
               defaultValue="Semanal"
             />
@@ -150,17 +154,17 @@ export default function Dashboard() {
           <BusinessStageChart />
         </div>
 
+        {/* === VENTAS POR ZONA === */}
         <div className="card card-zona">
           <h3 className="card-title">Ventas por zona</h3>
 
-          <CustomSelect 
+          <CustomSelect
             options={["Últ. trimestre", "Este mes", "Este año"]}
             defaultValue="Últ. trimestre"
           />
 
           <p className="text-info">Aún no hay resultados</p>
         </div>
-
       </div>
     </div>
   );
