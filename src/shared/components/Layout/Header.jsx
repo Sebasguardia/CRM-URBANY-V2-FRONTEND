@@ -36,7 +36,7 @@ export default function DashboardHeader({ title = "Negocios" }) {
       {/* Sección derecha */}
       <div className={styles.rightSection}>
         <button className={styles.premiumButton}>
-          Ser premium
+          
         </button>
 
         <button className={styles.notification}>
@@ -66,10 +66,10 @@ export default function DashboardHeader({ title = "Negocios" }) {
           {/* Dropdown Menu */}
           {dropdownOpen && (
             <div className={styles.dropdownMenu}>
-              <div className={styles.dropdownHeader}>
-                <User className={styles.dropdownHeaderIcon} />
-                <span>Mi Perfil</span>
-              </div>
+              <a href="/miperfil" className={styles.dropdownItem}>
+                <Newspaper className={styles.dropdownIcon} />
+                <span>mi perfil</span>
+              </a>
 
               <div className={styles.dropdownDivider} />
 
@@ -98,10 +98,6 @@ export default function DashboardHeader({ title = "Negocios" }) {
                 <span>Optimizaciones</span>
               </a>
 
-              <a href="/sitio-web" className={styles.dropdownItem}>
-                <Newspaper className={styles.dropdownIcon} />
-                <span>Sitio Web (posterioridad)</span>
-              </a>
 
               <a href="/blog" className={styles.dropdownItem}>
                 <Newspaper className={styles.dropdownIcon} />

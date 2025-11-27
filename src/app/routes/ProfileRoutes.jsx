@@ -8,12 +8,13 @@ export default function ProfileRoutes() {
     return (
         <Routes>
             <Route element={<MainLayout />}>
+                <Route path="miperfil" element={<MiPerfil />} />
                 <Route path="perfil-inmobiliaria" element={<RealEstatePage />} />
                 <Route path="integraciones" element={<IntegrationsPage />} />
                 <Route path="gestion-usuarios" element={<ManagementPage />} />
                 <Route path="automatizacion" element={<AutomationPage />} />
                 <Route path="optimizaciones" element={<OptimizationsPage />} />
-                <Route path="sitio-web" element={<WebsitePage />} />
+                
                 <Route path="blog" element={<BlogPage />} />
                 <Route path="ayuda" element={<HelpPage />} />
             </Route>
@@ -85,11 +86,11 @@ function OptimizationsPage() {
     );
 }
 
-function WebsitePage() {
+function MiPerfil() {
     return (
         <div>
-            <h2 className="text-xl font-bold mb-4">Sitio Web</h2>
-            <p>Configuración del sitio web - En desarrollo</p>
+            <h2 className="text-xl font-bold mb-4">Mi Perfil</h2>
+            <p>Configuración de mi perfil - En desarrollo</p>
         </div>
     );
 }
