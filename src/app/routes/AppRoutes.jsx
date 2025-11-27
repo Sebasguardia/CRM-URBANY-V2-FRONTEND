@@ -1,6 +1,7 @@
 // src/app/routes/AppRoutes.jsx
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
+import ActivitiesPage from '../../features/actividades/pages/ActivitiesPage';
 
 /**
  * Router principal de la aplicación - Versión temporal
@@ -73,14 +74,6 @@ function DashboardPage() {
   );
 }
 
-function ActivitiesPage() {
-  return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Actividades</h1>
-      <p>Página de actividades - En desarrollo</p>
-    </div>
-  );
-}
 
 function ValuationsPage() {
   return (

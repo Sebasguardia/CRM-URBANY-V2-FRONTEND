@@ -3,17 +3,15 @@ import dealsReducer from './deals.slice';
 import propertiesReducer from './properties.slice';
 import networkReducer from './network.slice';
 import uiReducer from './ui.slice';
+import activitiesReducer from '../../features/actividades/store/activities.slice';
 
-/**
- * Store centralizado de Redux
- * Combinación de todos los slices globales
- */
 export const store = configureStore({
   reducer: {
     deals: dealsReducer,
     properties: propertiesReducer,
     network: networkReducer,
     ui: uiReducer,
+    activities: activitiesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

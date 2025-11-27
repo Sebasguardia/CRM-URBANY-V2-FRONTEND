@@ -1,21 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { dealsService } from '../../features/deals/services/deals.api';
-
-/**
- * Slice global para Deals
- * Maneja estado de pipeline y deals seleccionados
- */
-export const fetchDeals = createAsyncThunk(
-  'deals/fetchAll',
-  async (params, { rejectWithValue }) => {
-    try {
-      const response = await dealsService.getAll(params);
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
+import { createSlice } from '@reduxjs/toolkit';
 
 const dealsSlice = createSlice({
   name: 'deals',
@@ -42,21 +25,6 @@ const dealsSlice = createSlice({
       const deal = state.items.find(d => d.id === dealId);
       if (deal) deal.stage = newStage;
     },
-  },
-  extraReducers: (builder) => {
-    builder
-      .addCase(fetchDeals.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(fetchDeals.fulfilled, (state, action) => {
-        state.loading = false;
-        state.items = action.payload;
-      })
-      .addCase(fetchDeals.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      });
   },
 });
 

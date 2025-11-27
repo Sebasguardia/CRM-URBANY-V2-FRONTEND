@@ -8,7 +8,8 @@ export const Modal = ({
   title, 
   children, 
   size = 'md', 
-  className = '' 
+  className = '',
+  noPadding = false
 }) => {
   useEffect(() => {
     if (isOpen) {
@@ -42,7 +43,7 @@ export const Modal = ({
             <X size={20} />
           </button>
         </div>
-        <div className={styles.modalBody}>{children}</div>
+        <div className={noPadding ? `${styles.modalBody} ${styles.modalBodyNoPadding}` : styles.modalBody}>{children}</div>
       </div>
     </div>
   );

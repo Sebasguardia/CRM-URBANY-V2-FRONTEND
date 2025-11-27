@@ -1,0 +1,100 @@
+.sidebar {
+  width: 200px;
+  background-color: #f9fafb;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.dateHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dateLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  flex: 1;
+  text-align: center;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.navButton:hover {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.hoursList {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5rem 0;
+  min-height: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hoursList::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.hoursList::-webkit-scrollbar-track {
+  display: none;
+}
+
+.hoursList::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+.hourItem {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  color: #6b7280;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  border-left: 3px solid transparent;
+}
+
+.hourItem:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.hourItem.selected {
+  background-color: #d1fae5;
+  color: #047857;
+  border-left-color: #38E47A;
+  font-weight: 500;
+}
+
+.hourItem.selected:hover {
+  background-color: #d1fae5;
+}
+

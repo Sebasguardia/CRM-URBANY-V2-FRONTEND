@@ -20,29 +20,37 @@
   max-width: 90vw;
   display: flex;
   flex-direction: column;
+  min-height: 0;
 }
 
 .modalSmall {
   width: 400px;
+  max-width: 90vw;
 }
 
 .modalMedium {
-  width: 600px;
+  width: 500px;
+  max-width: 90vw;
 }
 
 .modalLarge {
-  width: 800px;
+  width: 600px;
+  max-width: 90vw;
 }
 
 .modalXLarge {
-  width: 90vw;
+  width: 1000px;
+  max-width: 95vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .modalHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
+  padding: 1rem 1.25rem;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -69,9 +77,24 @@
 }
 
 .modalBody {
-  padding: 24px;
+  padding: 1.25rem;
   overflow-y: auto;
   flex: 1;
+  min-height: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalBodyNoPadding {
+  padding: 0;
+}
+
+.modalBody::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 @keyframes fadeIn {

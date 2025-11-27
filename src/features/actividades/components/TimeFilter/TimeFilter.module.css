@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.625rem;
+  flex-wrap: wrap;
+  min-width: 0;
+  flex: 1;
+}
+
+.periodContainer {
+  position: relative;
+  display: inline-block;
+  z-index: 1000;
+}
+

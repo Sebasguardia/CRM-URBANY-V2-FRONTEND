@@ -1,0 +1,45 @@
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+  min-height: 400px;
+}
+
+.imageContainer {
+  margin-bottom: 2rem;
+  max-width: 400px;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #1f2937;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #6b7280;
+  max-width: 500px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+.actionContainer {
+  margin-top: 1rem;
+}
+
