@@ -1,0 +1,177 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.stepNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 1.5rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow-x: auto;
+}
+
+.stepNavigation::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  right: 3rem;
+  height: 2px;
+  background: linear-gradient(to right, #e5e7eb 0%, #e5e7eb 100%);
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  min-width: 80px;
+}
+
+.step:hover .stepNumber {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(58, 73, 98, 0.2);
+}
+
+.stepNumber {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid #e5e7eb;
+  background: white;
+}
+
+.stepLabel {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.step.active .stepNumber {
+  background-color: #3A4962;
+  color: white;
+  border-color: #3A4962;
+  box-shadow: 0 4px 12px rgba(58, 73, 98, 0.3);
+  transform: scale(1.15);
+}
+
+.step.active .stepLabel {
+  color: #3A4962;
+  font-weight: 600;
+}
+
+.step.completed .stepNumber {
+  background-color: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.step.completed .stepNumber::after {
+  content: '✓';
+  position: absolute;
+  font-size: 1.2rem;
+}
+
+.step.completed .stepLabel {
+  color: #059669;
+  font-weight: 500;
+}
+
+.step.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.step.disabled:hover .stepNumber {
+  transform: none;
+  box-shadow: none;
+}
+
+.content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .stepNavigation {
+    padding: 1rem;
+  }
+  
+  .stepNavigation::before {
+    left: 2rem;
+    right: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .stepNavigation {
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .stepNavigation::before {
+    display: none;
+  }
+
+  .step {
+    min-width: 60px;
+  }
+
+  .stepNumber {
+    width: 36px;
+    height: 36px;
+    font-size: 0.875rem;
+  }
+
+  .stepLabel {
+    font-size: 0.75rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+}

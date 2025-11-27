@@ -1,6 +1,8 @@
 // src/app/routes/AppRoutes.jsx
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
+import Ventures from '../../features/emprendimiento/pages/Ventures';
+import FormForVentures from '../../features/emprendimiento/pages/FormForVentures';
 
 /**
  * Router principal de la aplicación - Versión temporal
@@ -27,7 +29,8 @@ export default function AppRoutes() {
           <Route path="mensajes" element={<MessagesPage />} />
           <Route path="redes" element={<NetworkPage />} />
           <Route path="mapas" element={<MapsPage />} />
-          <Route path="emprendimientos" element={<ProjectsPage />} />
+          <Route path="emprendimientos" element={<Ventures />} />
+          <Route path="emprendimientos/nuevo" element={<FormForVentures />} />
           <Route path="contactos" element={<ContactsPage />} />
           <Route path="reportes" element={<ReportsPage />} />
           <Route path="comentarios" element={<FeedbackPage />} />
@@ -150,15 +153,6 @@ function MapsPage() {
     <div>
       <h1 className="text-2xl font-bold mb-4">Mapas</h1>
       <p>Página de mapas - En desarrollo</p>
-    </div>
-  );
-}
-
-function ProjectsPage() {
-  return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Emprendimientos</h1>
-      <p>Página de emprendimientos - En desarrollo</p>
     </div>
   );
 }

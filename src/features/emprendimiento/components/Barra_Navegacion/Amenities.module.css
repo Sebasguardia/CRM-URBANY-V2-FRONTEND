@@ -1,0 +1,164 @@
+.container {
+  padding: 0;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.25rem;
+}
+
+.checkboxGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  row-gap: 1rem;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  position: relative;
+  background-color: white;
+}
+
+.checkbox:checked {
+  background-color: #3A4962;
+  border-color: #3A4962;
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox:hover {
+  border-color: #3A4962;
+}
+
+.checkboxLabel {
+  font-size: 0.875rem;
+  color: #1a1a1a;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.formButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btnRegresar {
+  padding: 0.875rem 2rem;
+  background-color: #e5e7eb;
+  color: #374151;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.btnRegresar:hover {
+  background-color: #d1d5db;
+  transform: translateY(-2px);
+}
+
+.btnContinuar {
+  padding: 0.875rem 2rem;
+  background-color: #3A4962;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(58, 73, 98, 0.25);
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.btnContinuar:hover {
+  background-color: #2d3a4d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(58, 73, 98, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .checkboxGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .checkboxGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .formButtons {
+    flex-direction: column;
+  }
+
+  .btnRegresar,
+  .btnContinuar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkboxGrid {
+    grid-template-columns: 1fr;
+  }
+}
