@@ -1,6 +1,7 @@
 // src/app/routes/AppRoutes.jsx
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
+import ReportesPage from '../../features/reportes/pages/ReportesPage';
 
 /**
  * Router principal de la aplicación - Versión temporal
@@ -29,7 +30,7 @@ export default function AppRoutes() {
           <Route path="mapas" element={<MapsPage />} />
           <Route path="emprendimientos" element={<ProjectsPage />} />
           <Route path="contactos" element={<ContactsPage />} />
-          <Route path="reportes" element={<ReportsPage />} />
+          <Route path="reportes" element={<ReportesPage />} />
           <Route path="comentarios" element={<FeedbackPage />} />
           <Route path="configuracion" element={<SettingsPage />} />
         </Route>
@@ -172,14 +173,7 @@ function ContactsPage() {
   );
 }
 
-function ReportsPage() {
-  return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Reportes</h1>
-      <p>Página de reportes - En desarrollo</p>
-    </div>
-  );
-}
+// (reemplazado por features/reportes/pages/ReportesPage)
 
 function FeedbackPage() {
   return (
