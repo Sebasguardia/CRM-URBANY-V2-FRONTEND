@@ -2,7 +2,7 @@
 const SIMULATE_DELAY = 500;
 
 // Helper para simular delay de red
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+export const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 // Helper para simular error aleatorio
 const simulateError = (rate = 0.05) => {

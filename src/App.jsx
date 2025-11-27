@@ -1,10 +1,13 @@
 import AppRoutes from './app/routes/AppRoutes'
+import { AuthProvider } from './app/providers/AuthProvider'
 
 function App() {
   return (
-    <div className="App">
-      <AppRoutes />
-    </div>
+    <AuthProvider>
+      <div className="App">
+        <AppRoutes />
+      </div>
+    </AuthProvider>
   )
 }
 

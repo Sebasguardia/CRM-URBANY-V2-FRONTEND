@@ -1,8 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
 :root {
   /* Colores principales */
-  --color-primary: #3b82f6;
-  --color-primary-light: #dbeafe;
-  --color-primary-dark: #1d4ed8;
+  --color-primary: #10b981;
+  --color-primary-light: #d1fae5;
+  --color-primary-dark: #047857;
   
   /* Estados */
   --color-success: #10b981;

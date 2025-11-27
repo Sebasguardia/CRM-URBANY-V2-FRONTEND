@@ -4,7 +4,9 @@ export const mockUsers = [
   {
     id: 'user-001',
     name: 'María González',
+    username: 'maria',
     email: 'maria@urbany.com',
+    password: 'password123',
     phone: '+5491123456789',
     role: 'ADMIN',
     avatar: 'https://ui-avatars.com/api/?name=María+González&background=3b82f6&color=fff',

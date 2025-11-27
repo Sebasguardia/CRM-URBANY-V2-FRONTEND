@@ -1,12 +1,15 @@
 import { Search, Bell, ChevronDown, User, Settings, Wrench, Users, Zap, Newspaper, HelpCircle, LogOut } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../app/providers/AuthProvider';
 import styles from './Header.module.css';
 
 export default function DashboardHeader({ title = "Negocios" }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const navigate = useNavigate();
+  const { logout, user } = useAuth();
 
-  // Cerrar dropdown al hacer click fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -17,6 +20,11 @@ export default function DashboardHeader({ title = "Negocios" }) {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   return (
     <header className={styles.header}>
@@ -56,8 +64,8 @@ export default function DashboardHeader({ title = "Negocios" }) {
             />
 
             <div className={styles.userInfo}>
-              <span className={styles.userName}>Maria</span>
-              <span className={styles.userRole}>Administrador</span>
+              <span className={styles.userName}>{user?.name || 'Usuario'}</span>
+              <span className={styles.userRole}>{user?.role || 'Administrador'}</span>
             </div>
 
             <ChevronDown className={`${styles.chevronIcon} ${dropdownOpen ? styles.chevronOpen : ''}`} />
@@ -115,7 +123,7 @@ export default function DashboardHeader({ title = "Negocios" }) {
 
               <div className={styles.dropdownDivider} />
 
-              <button className={styles.dropdownItem}>
+              <button className={styles.dropdownItem} onClick={handleLogout}>
                 <LogOut className={styles.dropdownIcon} />
                 <span>Cerrar sesión</span>
               </button>

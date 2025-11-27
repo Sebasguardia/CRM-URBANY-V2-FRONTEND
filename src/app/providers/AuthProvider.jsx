@@ -1,5 +1,4 @@
 import { createContext, useContext, useReducer, useEffect } from 'react';
-import { authService } from '../../features/auth/services/auth.api';
 
 const AuthContext = createContext(null);
 
@@ -36,44 +35,41 @@ function authReducer(state, action) {
   }
 }
 
-/**
- * Provider de autenticación global
- * Maneja login, logout, token y datos del usuario
- */
 export function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   useEffect(() => {
-    // Auto-login con token existente
     const token = localStorage.getItem('token');
     if (token) {
-      validateToken(token);
+      const mockUser = {
+        id: 'user-001',
+        name: 'Usuario Demo',
+        email: 'usuario@example.com',
+        role: 'ADMIN'
+      };
+      dispatch({ type: 'AUTH_SUCCESS', payload: { user: mockUser, token } });
     } else {
-      dispatch({ type: 'AUTH_FAILURE', payload: 'No token found' });
+      dispatch({ type: 'LOGOUT' });
     }
   }, []);
 
-  const validateToken = async (token) => {
-    try {
-      const user = await authService.me(token);
-      dispatch({ type: 'AUTH_SUCCESS', payload: { user, token } });
-    } catch (error) {
-      localStorage.removeItem('token');
-      dispatch({ type: 'AUTH_FAILURE', payload: error.message });
-    }
-  };
-
   const login = async (credentials) => {
     dispatch({ type: 'AUTH_START' });
-    try {
-      const { user, token } = await authService.login(credentials);
-      localStorage.setItem('token', token);
-      dispatch({ type: 'AUTH_SUCCESS', payload: { user, token } });
-      return { success: true };
-    } catch (error) {
-      dispatch({ type: 'AUTH_FAILURE', payload: error.message });
-      return { success: false, error: error.message };
-    }
+    
+    setTimeout(() => {
+      const mockUser = {
+        id: 'user-001',
+        name: 'Usuario Demo',
+        email: 'usuario@example.com',
+        role: 'ADMIN'
+      };
+      
+      const mockToken = 'mock-token-123';
+      localStorage.setItem('token', mockToken);
+      dispatch({ type: 'AUTH_SUCCESS', payload: { user: mockUser, token: mockToken } });
+    }, 300);
+    
+    return { success: true };
   };
 
   const logout = () => {
@@ -90,9 +86,6 @@ export function AuthProvider({ children }) {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
-/**
- * Hook para usar el contexto de auth
- */
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {

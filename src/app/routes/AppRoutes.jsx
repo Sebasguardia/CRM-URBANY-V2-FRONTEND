@@ -1,22 +1,39 @@
-// src/app/routes/AppRoutes.jsx
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
+import AuthPage from '../../features/auth/pages/AuthPage/AuthPage';
+import { ProtectedRoute } from '../../shared/components/RouteGuard/ProtectedRoute';
+import { PublicRoute } from '../../shared/components/RouteGuard/PublicRoute';
 
-/**
- * Router principal de la aplicación - Versión temporal
- */
 export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Rutas de autenticación sin layout */}
-        <Route path="/auth/login" element={<LoginPage />} />
-        <Route path="/auth/register" element={<RegisterPage />} />
+        <Route 
+          path="/login" 
+          element={
+            <PublicRoute>
+              <AuthPage />
+            </PublicRoute>
+          } 
+        />
+        <Route 
+          path="/register" 
+          element={
+            <PublicRoute>
+              <AuthPage />
+            </PublicRoute>
+          } 
+        />
 
-        {/* Rutas principales con layout principal */}
-        <Route path="/" element={<MainLayout />}>
+        <Route 
+          path="/" 
+          element={
+            <ProtectedRoute>
+              <MainLayout />
+            </ProtectedRoute>
+          }
+        >
           <Route index element={<Navigate to="/dashboard" replace />} />
-          
           <Route path="dashboard" element={<DashboardPage />} />
           <Route path="actividades" element={<ActivitiesPage />} />
           <Route path="tasaciones" element={<ValuationsPage />} />
@@ -34,33 +51,9 @@ export default function AppRoutes() {
           <Route path="configuracion" element={<SettingsPage />} />
         </Route>
 
-        {/* Redirect cualquier ruta no encontrada */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
-  );
-}
-
-// Componentes temporales básicos
-function LoginPage() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold mb-4">Login</h1>
-        <p>Página de login - En desarrollo</p>
-      </div>
-    </div>
-  );
-}
-
-function RegisterPage() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md">
-        <h1 className="text-2xl font-bold mb-4">Registro</h1>
-        <p>Página de registro - En desarrollo</p>
-      </div>
-    </div>
   );
 }
 
