@@ -1,7 +1,7 @@
 // src/app/routes/AppRoutes.jsx
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
-import ReportesPage from '../../features/reportes/pages/ReportesPage';
+import ReportesPage from '../../features/reportes/pages/Reportes/ReportesPage';
 
 /**
  * Router principal de la aplicación - Versión temporal

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import styles from './ReportesPage.module.css';
-import { SearchInput } from '../components/SearchInput';
-import { Table } from '../components/Table';
-import { Pagination } from '../components/Pagination';
-import { Badge } from '../../../shared/components/UI/Badge/Badge';
-import { Avatar } from '../../../shared/components/UI/Avatar/Avatar';
-import { mockProperties } from '../../../shared/mocks/properties.mock';
+import styles from '../ReportesPage.module.css';
+import { SearchInput } from '../../components/SearchInput';
+import { Table } from '../../components/Table';
+import { Pagination } from '../../components/Pagination';
+import { Badge } from '../../../../shared/components/UI/Badge/Badge';
+import { Avatar } from '../../../../shared/components/UI/Avatar/Avatar';
+import { mockProperties } from '../../../../shared/mocks/properties.mock';
 
 const formatPrice = (currency, amount) => {
   const formatted = new Intl.NumberFormat('es-ES').format(amount);

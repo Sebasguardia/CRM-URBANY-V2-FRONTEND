@@ -1,23 +1,13 @@
 import React, { useState } from 'react';
-import { Building2, Users as UsersIcon, ExternalLink } from 'lucide-react';
-import styles from './ReportesPage.module.css';
+import { Building2, Users as UsersIcon } from 'lucide-react';
+import styles from '../ReportesPage.module.css';
 
-import { TabButton } from '../components/TabButton';
-import { Table } from '../components/Table';
-import { Pagination } from '../components/Pagination';
-import { Badge } from '../../../shared/components/UI/Badge/Badge';
-import { Avatar } from '../../../shared/components/UI/Avatar/Avatar';
+import { TabButton } from '../../components/TabButton';
 
-import { mockProperties } from '../../../shared/mocks/properties.mock';
-import { mockNetwork } from '../../../shared/mocks/network.mock';
-import { InitialAvatar } from '../components/InitialAvatar';
-import CategoriaAgentes from './Categoria.Agentes';
-import CategoriaPropiedades from './Categoria.Propiedades';
+import CategoriaAgentes from '../Agentes/Categoria.Agentes';
+import CategoriaPropiedades from '../Propiedades/Categoria.Propiedades';
 
-const formatPrice = (currency, amount) => {
-  const formatted = new Intl.NumberFormat('es-ES').format(amount);
-  return `${currency} ${formatted}`;
-};
+ 
 
 export default function ReportesPage() {
   const [activeTab, setActiveTab] = useState('propiedades');

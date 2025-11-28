@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import styles from './ReportesPage.module.css';
+import styles from '../ReportesPage.module.css';
 import { ExternalLink } from 'lucide-react';
-import { SearchInput } from '../components/SearchInput';
-import { Table } from '../components/Table';
-import { Pagination } from '../components/Pagination';
-import { Badge } from '../../../shared/components/UI/Badge/Badge';
-import { InitialAvatar } from '../components/InitialAvatar';
-import { mockNetwork } from '../../../shared/mocks/network.mock';
+import { SearchInput } from '../../components/SearchInput';
+import { Table } from '../../components/Table';
+import { Pagination } from '../../components/Pagination';
+import { Badge } from '../../../../shared/components/UI/Badge/Badge';
+import { InitialAvatar } from '../../components/InitialAvatar';
+import { mockNetwork } from '../../../../shared/mocks/network.mock';
 
 export default function CategoriaAgentes() {
   const [page, setPage] = useState(1);
@@ -43,7 +43,7 @@ export default function CategoriaAgentes() {
     {
       header: 'ROL',
       headerAlign: 'center',
-      align: 'right',
+      align: 'center',
       render: (a) => (
         <Badge variant="primary" size="md">
           {a.user?.role === 'ADMIN' ? 'Administrador' : a.user?.role === 'VALUER' ? 'Tasador' : 'Agente'}
