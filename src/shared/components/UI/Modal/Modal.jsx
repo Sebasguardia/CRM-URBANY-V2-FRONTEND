@@ -8,7 +8,10 @@ export const Modal = ({
   title, 
   children, 
   size = 'md', 
-  className = '' 
+  className = '',
+  showClose = true,
+  titleAlign = 'start',
+  scroll = true,
 }) => {
   useEffect(() => {
     if (isOpen) {
@@ -36,13 +39,15 @@ export const Modal = ({
         className={`${styles.modalContainer} ${sizeClasses[size]} ${className}`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className={styles.modalHeader}>
+        <div className={`${styles.modalHeader} ${titleAlign === 'center' ? styles.modalHeaderCenter : ''}`}>
           <h3 className={styles.modalTitle}>{title}</h3>
-          <button className={styles.closeButton} onClick={onClose} aria-label="Cerrar">
-            <X size={20} />
-          </button>
+          {showClose && (
+            <button className={`${styles.closeButton} ${styles.closeButtonRight}`} onClick={onClose} aria-label="Cerrar">
+              <X size={20} />
+            </button>
+          )}
         </div>
-        <div className={styles.modalBody}>{children}</div>
+        <div className={`${styles.modalBody} ${scroll ? '' : styles.modalBodyNoScroll}`}>{children}</div>
       </div>
     </div>
   );

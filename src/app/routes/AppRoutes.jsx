@@ -1,6 +1,7 @@
 // src/app/routes/AppRoutes.jsx
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
+import ContactosPage from '../../features/contactos/pages/ContactosPage';
 
 /**
  * Router principal de la aplicación - Versión temporal
@@ -164,12 +165,7 @@ function ProjectsPage() {
 }
 
 function ContactsPage() {
-  return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Contactos</h1>
-      <p>Página de contactos - En desarrollo</p>
-    </div>
-  );
+  return <ContactosPage />;
 }
 
 function ReportsPage() {

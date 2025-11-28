@@ -27,7 +27,7 @@
 }
 
 .modalMedium {
-  width: 600px;
+  width: 288px;
 }
 
 .modalLarge {
@@ -41,14 +41,16 @@
 .modalHeader {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 20px 0 20px 24px;
   border-bottom: 1px solid var(--color-border);
+  position: relative;
 }
 
 .modalTitle {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--color-text-primary);
 }
@@ -58,7 +60,7 @@
   border: none;
   cursor: pointer;
   color: var(--color-text-secondary);
-  padding: 4px;
+  padding: 2px;
   border-radius: 4px;
   transition: all 0.2s ease;
 }
@@ -68,10 +70,26 @@
   color: var(--color-text-primary);
 }
 
+.modalHeaderCenter {
+  justify-content: center;
+  padding: 20px 24px;
+}
+
+.closeButtonRight {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .modalBody {
   padding: 24px;
   overflow-y: auto;
   flex: 1;
+}
+
+.modalBodyNoScroll {
+  overflow-y: visible;
 }
 
 @keyframes fadeIn {
