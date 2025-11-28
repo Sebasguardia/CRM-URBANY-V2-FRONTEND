@@ -2,6 +2,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
 
+
+import EnviarComentariosPage from '../../features/enviar_comentarios/pages/EnviarComentariosPage';
 /**
  * Router principal de la aplicación - Versión temporal
  */
@@ -30,7 +32,7 @@ export default function AppRoutes() {
           <Route path="emprendimientos" element={<ProjectsPage />} />
           <Route path="contactos" element={<ContactsPage />} />
           <Route path="reportes" element={<ReportsPage />} />
-          <Route path="comentarios" element={<FeedbackPage />} />
+          <Route path="enviar-comentarios" element={<EnviarComentariosPage />} />
           <Route path="configuracion" element={<SettingsPage />} />
         </Route>
 

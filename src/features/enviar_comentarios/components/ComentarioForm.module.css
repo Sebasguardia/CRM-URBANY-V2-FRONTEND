@@ -1,0 +1,134 @@
+/* src/components/ComentarioForm.module.css */
+
+.formLayout {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  /* Asumiendo una fuente sans-serif moderna */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 120px;
+  height: auto;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.tabButton {
+  background: none;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.tabButton:hover {
+  opacity: 1;
+}
+
+/* Estilos específicos para cada pestaña activa */
+.activeTabSugerencias {
+  opacity: 1;
+  color: #2ecc71;
+  /* Verde similar al de la imagen */
+  border-bottom: 2px solid #2ecc71;
+}
+
+.activeTabCumplidos {
+  opacity: 1;
+  color: #e74c3c;
+  /* Rojo para corazón/cumplidos */
+  border-bottom: 2px solid #e74c3c;
+}
+
+.activeTabInconvenientes {
+  opacity: 1;
+  color: #3498db;
+  /* Azul para información/inconvenientes */
+  border-bottom: 2px solid #3498db;
+}
+
+.activeTabGeneral {
+  opacity: 1;
+  color: #9b59b6;
+  /* Morado para general */
+  border-bottom: 2px solid #9b59b6;
+}
+
+.textArea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: none;
+  min-height: 180px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.textArea:focus {
+  border-color: #ccc;
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancelButton,
+.acceptButton {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cancelButton {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.acceptButton {
+  background-color: #dcdcdc;
+  color: #000;
+}

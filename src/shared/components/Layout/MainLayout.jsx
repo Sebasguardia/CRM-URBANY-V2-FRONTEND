@@ -23,7 +23,7 @@ export default function MainLayout() {
       '/emprendimientos': 'Emprendimientos',
       '/contactos': 'Contactos',
       '/reportes': 'Reportes',
-      '/comentarios': 'Enviar comentarios',
+      '/enviar-comentarios': 'Enviar comentarios',
       '/configuracion': 'Configuración',
     };
     return titleMap[path] || 'Dashboard';

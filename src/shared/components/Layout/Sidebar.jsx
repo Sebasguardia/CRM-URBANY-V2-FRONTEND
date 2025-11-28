@@ -29,7 +29,8 @@ export default function Sidebar() {
     { icon: <Building className={styles.icon} />, label: "Emprendimientos", path: "/emprendimientos" },
     { icon: <Users className={styles.icon} />, label: "Contactos", path: "/contactos" },
     { icon: <AlertTriangle className={styles.icon} />, label: "Reportes", path: "/reportes" },
-    { icon: <MessageSquare className={styles.icon} />, label: "Enviar comentarios", path: "/comentarios" },
+    // CORREGIDO: Cambiar "/comentarios" por "/enviar-comentarios"
+    { icon: <MessageSquare className={styles.icon} />, label: "Enviar comentarios", path: "/enviar-comentarios" },
   ];
 
   return (
