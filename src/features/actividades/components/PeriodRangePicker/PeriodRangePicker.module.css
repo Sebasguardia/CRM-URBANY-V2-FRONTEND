@@ -13,6 +13,7 @@
   box-sizing: border-box;
   pointer-events: auto;
   animation: fadeIn 0.2s ease-in-out;
+  font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 @keyframes fadeIn {

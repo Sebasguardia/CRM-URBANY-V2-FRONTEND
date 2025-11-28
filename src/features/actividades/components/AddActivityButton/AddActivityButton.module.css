@@ -16,6 +16,7 @@
   white-space: nowrap;
   flex-shrink: 0;
   max-width: 100%;
+  font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .addButton:hover {

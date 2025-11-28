@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Users, FileText, FileCheck, MoreHorizontal, Calendar, Clock, Building, Plus } from 'lucide-react';
 import { Modal } from '../../../../shared/components/UI/Modal/Modal';
 import Input from '../../../../shared/components/UI/Input/Input';
+import Textarea from '../../../../shared/components/UI/Textarea/Textarea';
 import DurationDropdown from '../DurationDropdown/DurationDropdown';
 import ActivityScheduleSidebar from './ActivityScheduleSidebar';
 import AgentSelectDropdown from './AgentSelectDropdown';
@@ -193,8 +194,7 @@ const ActivityModal = ({ isOpen, onClose, activity = null }) => {
 
             <div className={styles.section}>
               <label className={styles.label}>Notas</label>
-              <textarea
-                className={styles.textarea}
+              <Textarea
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                 placeholder="Ingresa una nota..."

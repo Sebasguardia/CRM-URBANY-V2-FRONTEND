@@ -1,10 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+
 :root {
-  /* Colores principales */
   --color-primary: #3b82f6;
   --color-primary-light: #dbeafe;
   --color-primary-dark: #1d4ed8;
   
-  /* Estados */
   --color-success: #10b981;
   --color-success-light: #d1fae5;
   --color-success-dark: #047857;
@@ -18,7 +18,6 @@
   --color-info-light: #cffafe;
   --color-info-dark: #0891b2;
   
-  /* Neutros */
   --color-text-primary: #1f2937;
   --color-text-secondary: #6b7280;
   --color-border: #e5e7eb;
@@ -29,4 +28,8 @@
   --color-gray-200: #e5e7eb;
   --color-gray-700: #374151;
   --color-gray-900: #111827;
+}
+
+* {
+  font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }

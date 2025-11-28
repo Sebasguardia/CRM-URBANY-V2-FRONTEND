@@ -1,6 +1,7 @@
 .container {
   display: inline-block;
   position: relative;
+  font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .dropdownWrapper {
