@@ -1,6 +1,8 @@
 // src/app/routes/AppRoutes.jsx
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
+import NegociosPage from '../../features/negocios/pages/NegociosPage';
+import ProgresoNegocioPage from '../../features/negocios/pages/ProgresoNegocioPage';
 
 /**
  * Router principal de la aplicación - Versión temporal
@@ -22,7 +24,8 @@ export default function AppRoutes() {
           <Route path="tasaciones" element={<ValuationsPage />} />
           <Route path="propiedades" element={<PropertiesPage />} />
           <Route path="propiedades/:id" element={<PropertyDetailPage />} />
-          <Route path="negocios" element={<DealsPage />} />
+          <Route path="negocios" element={<NegociosPage />} />
+          <Route path="negocios/progreso" element={<ProgresoNegocioPage />} />
           <Route path="negocios/:id" element={<DealDetailPage />} />
           <Route path="mensajes" element={<MessagesPage />} />
           <Route path="redes" element={<NetworkPage />} />

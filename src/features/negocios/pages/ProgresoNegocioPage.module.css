@@ -1,0 +1,173 @@
+.progresoPage {
+    padding: 24px;
+    max-width: 1400px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --border-light: #e5e7eb;
+    --border-focus: #9ca3af;
+    --text-main: #1f2937;
+    --text-muted: #9ca3af;
+    --bg-card: #ffffff;
+    --radius-sm: 8px;
+    --primary: #38E47A;
+}
+
+.header {
+    margin-bottom: 32px;
+}
+
+.titleRow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 8px;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    color: #e5e7eb !important;
+    background-color: #3A4962 !important;
+    border: 1px solid #3A4962 !important;
+}
+
+.backButton:hover {
+    background-color: #2d3a4f !important;
+    border-color: #2d3a4f !important;
+}
+
+
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #9ca3af;
+    margin: 12px 0 0 0;
+}
+
+.etapasGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+    gap: 62px;
+    margin-left: 30px;
+}
+
+.etapaCard {
+    padding: 24px;
+    min-height: 30px;
+    border: 2px solid #e5e7eb;
+    border-radius: 20px;
+    width: 280px;
+    box-sizing: border-box;
+}
+
+.etapaCard:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.etapaNombre {
+    font-size: 18px;
+    font-weight: 100;
+    margin: 0 0 12px 0;
+}
+
+.diasRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    color: #1f2937;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+    gap: 62px;
+    margin-left: 30px;
+    margin-top: 14px;
+}
+
+.formColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.label {
+    font-size: 16px;
+    color: #1f2937;
+    margin: 0;
+}
+
+.toggleRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toggleLabel {
+    font-size: 16px;
+    color: #1f2937;
+}
+
+.helpIcon {
+    color: #1f2937;
+    cursor: pointer;
+}
+
+.customInput {
+    max-width: 280px !important;
+    width: 280px !important;
+}
+
+.customInput input {
+    width: 100% !important;
+    height: 56px !important;
+    padding: 0 18px !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 14px !important;
+    font-size: 16px !important;
+    color: #1f2937 !important;
+    background-color: #ffffff !important;
+    outline: none !important;
+    font-family: inherit !important;
+    box-sizing: border-box !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.customInput input:focus {
+    border-color: var(--primary) !important;
+}
+
+.customInput input::placeholder {
+    color: #d1d5db !important;
+}
+
+.negociacionCard {
+    padding: 24px;
+    min-height: 30px;
+    border: 2px solid #e5e7eb;
+    border-radius: 20px;
+    width: 280px;
+    box-sizing: border-box;
+    margin-top: 14px; 
+}
+
+.negociacionCard:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.negociacionTitulo {
+    font-size: 18px;
+    font-weight: 100;
+    margin: 0 0 12px 0;
+}

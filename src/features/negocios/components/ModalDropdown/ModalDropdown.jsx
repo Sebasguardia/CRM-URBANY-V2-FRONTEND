@@ -1,9 +1,9 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { useOutsideClick } from '../../../hooks/useOutsideClick';
-import styles from './Dropdown.module.css';
+import { useOutsideClick } from '../../../../shared/hooks/useOutsideClick';
+import styles from './ModalDropdown.module.css';
 
-export const Dropdown = ({ 
+export const ModalDropdown = ({ 
   options = [], 
   value, 
   onChange, 
@@ -23,6 +23,7 @@ export const Dropdown = ({
         className={styles.dropdownToggle}
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
+        type="button"
       >
         <span className={styles.dropdownValue}>
           {selectedOption ? selectedOption.label : placeholder}
