@@ -3,6 +3,9 @@
   flex-direction: column;
   gap: 16px;
   font-size: 15px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 
 .subtitle {
@@ -12,8 +15,18 @@
 
 .content {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 24px;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 .pageTitle {
@@ -90,6 +103,9 @@
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
   overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .cardHeader {

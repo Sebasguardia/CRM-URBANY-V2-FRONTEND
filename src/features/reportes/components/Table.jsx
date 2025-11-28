@@ -9,7 +9,14 @@ export const Table = ({ columns = [], data = [], columnsTemplate = '120px 1.6fr 
           <div
             key={idx}
             className={styles.headerCell}
-            style={{ textAlign: col.align === 'right' ? 'right' : col.align === 'center' ? 'center' : 'left' }}
+            style={{
+              textAlign:
+                (col.headerAlign || col.align) === 'right'
+                  ? 'right'
+                  : (col.headerAlign || col.align) === 'center'
+                  ? 'center'
+                  : 'left'
+            }}
           >
             {col.header}
           </div>

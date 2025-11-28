@@ -89,6 +89,7 @@
   max-width: 100%;
   overflow-x: hidden;
   margin-top: 96px;
+  box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
