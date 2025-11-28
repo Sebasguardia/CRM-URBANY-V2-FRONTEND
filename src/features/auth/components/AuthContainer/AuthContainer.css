@@ -1,0 +1,716 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.auth-container {
+  position: relative;
+  width: 1000px;
+  height: 600px;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 12px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.auth-container .form-box {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-box.login {
+  left: 0;
+  padding: 0 40px;
+  z-index: 1;
+}
+
+.auth-container.active .form-box.login {
+  z-index: 0;
+}
+
+.form-box.login .animation {
+  transform: translateX(0%);
+  transition: 0.7s;
+  opacity: 1;
+  transition-delay: calc(0.1s * var(--S));
+}
+
+.auth-container.active .form-box.login .animation {
+  transform: translateX(-120%);
+  opacity: 0;
+  transition-delay: calc(0.1s * var(--D));
+}
+
+.auth-container.inmobiliaria-view .form-box.login .animation {
+  transform: translateX(-120%);
+  opacity: 0;
+}
+
+.form-box.register {
+  right: 0;
+  padding: 0 60px;
+  z-index: 0;
+}
+
+.auth-container.active .form-box.register {
+  z-index: 1;
+}
+
+.form-box.register .animation {
+  transform: translateX(120%);
+  transition: 0.7s ease;
+  opacity: 0;
+  filter: blur(10px);
+  transition-delay: calc(0.1s * var(--S));
+}
+
+.auth-container.active .form-box.register .animation {
+  transform: translateX(0%);
+  opacity: 1;
+  filter: blur(0px);
+  transition-delay: calc(0.1s * var(--li));
+}
+
+
+
+.form-box.inmobiliaria {
+  left: 0;
+  padding: 0 40px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.auth-container.inmobiliaria-view .form-box.inmobiliaria {
+  z-index: 2;
+}
+
+.auth-container.active .form-box.inmobiliaria {
+  z-index: 0;
+}
+
+.form-box.inmobiliaria .animation {
+  transform: translateX(-120%);
+  transition: 0.7s;
+  opacity: 0;
+  transition-delay: calc(0.1s * var(--S));
+}
+
+.auth-container.inmobiliaria-view .form-box.inmobiliaria .animation {
+  transform: translateX(0%);
+  opacity: 1;
+  transition-delay: calc(0.1s * var(--S));
+}
+
+.auth-container.active .form-box.inmobiliaria .animation {
+  transform: translateX(-120%);
+  opacity: 0;
+  transition-delay: calc(0.1s * var(--D));
+}
+
+.auth-logo {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin: 4px auto;
+}
+
+.form-box h2 {
+  font-size: 28px;
+  text-align: center;
+  color: #1f2937;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-box .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #1f2937;
+  font-weight: 400;
+  border-bottom: 1.5px solid #e5e7eb;
+  padding-right: 35px;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+  border-bottom: 1.5px solid var(--color-primary);
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #9ca3af;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -8px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.input-box .icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  transition: 0.3s;
+  width: 24px;
+  height: 24px;
+}
+
+.input-box .password-toggle {
+  cursor: pointer;
+}
+
+.input-box .password-toggle:hover {
+  color: var(--color-primary);
+}
+
+.input-box input:focus ~ .icon,
+.input-box input:valid ~ .icon {
+  color: var(--color-primary);
+}
+
+.btn {
+  position: relative;
+  width: 100%;
+  height: 44px;
+  background: var(--color-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.btn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.25);
+}
+
+.checkbox-container {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.checkbox-label span {
+  flex: 1;
+}
+
+.forgot-link {
+  text-align: right;
+  margin: 12px 0 8px;
+}
+
+.forgot-password {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+.forgot-password::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: var(--color-primary);
+}
+
+.forgot-password:hover::after {
+  width: 100%;
+}
+
+.regi-link {
+  font-size: 13px;
+  text-align: center;
+  margin: 15px 0 5px;
+  color: #6b7280;
+}
+
+.regi-link a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  position: relative;
+  transition: 0.3s;
+}
+
+.regi-link a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+
+.regi-link a:hover {
+  color: var(--color-primary-dark);
+}
+
+.regi-link a:hover::after {
+  width: 100%;
+}
+
+.info-content {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.info-content.login {
+  right: 0;
+  text-align: right;
+  padding: 0 50px 60px 140px;
+}
+
+.info-content.login .animation {
+  transform: translateX(0);
+  transition: 0.7s ease;
+  transition-delay: calc(0.1s * var(--S));
+  opacity: 1;
+  filter: blur(0px);
+}
+
+.auth-container.active .info-content.login .animation {
+  transform: translateX(120%);
+  opacity: 0;
+  filter: blur(10px);
+  transition-delay: calc(0.1s * var(--D));
+}
+
+.auth-container.inmobiliaria-view .info-content.login .animation {
+  transform: translateX(120%);
+  opacity: 0;
+  filter: blur(10px);
+}
+
+.info-content.register {
+  left: 0;
+  text-align: left;
+  padding: 0 140px 60px 50px;
+  pointer-events: none;
+}
+
+.info-content.register .animation {
+  transform: translateX(-120%);
+  transition: 0.7s ease;
+  opacity: 0;
+  filter: blur(10px);
+  transition-delay: calc(0.1s * var(--S));
+}
+
+.auth-container.active .info-content.register .animation {
+  transform: translateX(0%);
+  opacity: 1;
+  filter: blur(0);
+  transition-delay: calc(0.1s * var(--li));
+}
+
+
+
+
+
+
+
+.info-content h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.info-content p {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 400;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.auth-container .curved-shape {
+  position: absolute;
+  right: 0;
+  top: -5px;
+  height: 800px;
+  width: 1100px;
+  background: var(--color-primary);
+  transform: rotate(10deg) skewY(40deg);
+  transform-origin: bottom right;
+  transition: 1.5s ease;
+  transition-delay: 1.6s;
+}
+
+.auth-container.active .curved-shape {
+  transform: rotate(0deg) skewY(0deg);
+  transition-delay: 0.5s;
+  height: 1000px;
+  width: 1300px;
+}
+
+.auth-container .curved-shape2 {
+  position: absolute;
+  left: 250px;
+  top: 100%;
+  height: 900px;
+  width: 1100px;
+  background: #ffffff;
+  transform: rotate(0deg) skewY(0deg);
+  transform-origin: bottom left;
+  transition: 1.5s ease;
+  transition-delay: 0.5s;
+}
+
+.auth-container.active .curved-shape2 {
+  transform: rotate(-11deg) skewY(-41deg);
+  transition-delay: 1.2s;
+  left: 350px;
+  height: 800px;
+  width: 1000px;
+}
+
+
+
+
+
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .auth-container {
+    width: 95%;
+    max-width: 450px;
+    height: auto;
+    min-height: 600px;
+    border-width: 2px;
+  }
+
+  .auth-container .form-box {
+    width: 100%;
+    position: relative;
+    padding: 30px 25px !important;
+  }
+
+  .form-box.login,
+  .form-box.register {
+    left: 0 !important;
+    right: 0 !important;
+  }
+
+  .auth-logo {
+    width: 140px;
+    margin: 3px auto;
+  }
+
+  .form-box h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .form-box .input-box {
+    margin-top: 20px;
+    height: 45px;
+  }
+
+  .input-box input {
+    font-size: 15px;
+    padding-right: 30px;
+  }
+
+  .input-box label {
+    font-size: 15px;
+  }
+
+  .input-box .icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .btn {
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .regi-link {
+    font-size: 13px;
+    margin: 15px 0 5px;
+  }
+
+  .info-content {
+    display: none;
+  }
+
+  .curved-shape,
+  .curved-shape2 {
+    display: none;
+  }
+
+  .auth-container.active .form-box.login,
+  .auth-container .form-box.register {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    filter: blur(0) !important;
+  }
+
+  .auth-container.active .form-box.login {
+    display: none;
+  }
+
+  .auth-container .form-box.register {
+    display: none;
+  }
+
+  .auth-container.active .form-box.register {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .auth-container .form-box {
+    padding: 25px 20px !important;
+  }
+
+  .auth-logo {
+    width: 120px;
+  }
+
+  .form-box h2 {
+    font-size: 24px;
+  }
+
+  .form-box .input-box {
+    margin-top: 18px;
+  }
+}
+
+/* Inmobiliaria State - Diseño igual que login */
+.form-box.inmobiliaria .form-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+.form-box.inmobiliaria h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.form-box.inmobiliaria .input-box {
+  margin-top: 22px;
+  height: 45px;
+}
+
+.form-box.inmobiliaria .checkbox-container {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.form-box.inmobiliaria .btn {
+  margin-top: 15px;
+}
+
+.form-box.inmobiliaria::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form-box.inmobiliaria::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.form-box.inmobiliaria::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+
+.form-box.inmobiliaria::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+.info-content.inmobiliaria {
+  right: 0;
+  text-align: right;
+  padding: 0 50px 60px 140px;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.info-content.inmobiliaria .animation {
+  transform: translateX(120%);
+  transition: 0.7s ease;
+  opacity: 0;
+  filter: blur(10px);
+  transition-delay: calc(0.1s * var(--S));
+}
+
+.auth-container.inmobiliaria-view .info-content.inmobiliaria .animation {
+  transform: translateX(0);
+  opacity: 1;
+  filter: blur(0px);
+  transition-delay: calc(0.1s * var(--S));
+}
+
+.auth-container.active .info-content.inmobiliaria .animation {
+  transform: translateX(120%);
+  opacity: 0;
+  filter: blur(10px);
+  transition-delay: calc(0.1s * var(--D));
+}
+
+
+
+.btn-back {
+  padding: 12px 28px;
+  background: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid #ffffff;
+  color: var(--color-primary);
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  pointer-events: auto;
+  white-space: nowrap;
+  display: inline-block;
+  width: auto;
+}
+
+.btn-back:hover {
+  background: transparent;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.25);
+}
+
+.auth-container.inmobiliaria-view .form-box.login,
+.auth-container.inmobiliaria-view .info-content.login {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.auth-container.inmobiliaria-view .curved-shape {
+  height: 729px;
+  width: 979px;
+}
+
+.inmobiliaria-form .form-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+.inmobiliaria-form h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.inmobiliaria-form .input-box {
+  margin-top: 22px;
+  height: 45px;
+}
+
+.inmobiliaria-form .checkbox-container {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.inmobiliaria-form .btn {
+  margin-top: 15px;
+}
+
+.inmobiliaria-form::-webkit-scrollbar {
+  width: 6px;
+}
+
+.inmobiliaria-form::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.inmobiliaria-form::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+
+.inmobiliaria-form::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}

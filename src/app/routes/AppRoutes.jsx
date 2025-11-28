@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
-import AuthPage from '../../features/auth/pages/AuthPage/AuthPage';
+import AuthLayout from '../../features/auth/pages/AuthLayout/AuthLayout';
+import LoginPage from '../../features/auth/pages/LoginPage/LoginPage';
+import RegisterPage from '../../features/auth/pages/RegisterPage/RegisterPage';
+import RegisterInmobiliariaPage from '../../features/auth/pages/RegisterInmobiliariaPage/RegisterInmobiliariaPage';
 import { ProtectedRoute } from '../../shared/components/RouteGuard/ProtectedRoute';
 import { PublicRoute } from '../../shared/components/RouteGuard/PublicRoute';
 
@@ -9,21 +12,21 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route 
-          path="/login" 
+          path="/auth" 
           element={
             <PublicRoute>
-              <AuthPage />
+              <AuthLayout />
             </PublicRoute>
-          } 
-        />
-        <Route 
-          path="/register" 
-          element={
-            <PublicRoute>
-              <AuthPage />
-            </PublicRoute>
-          } 
-        />
+          }
+        >
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="register-inmobiliaria" element={<RegisterInmobiliariaPage />} />
+          <Route index element={<Navigate to="/auth/login" replace />} />
+        </Route>
+        
+        <Route path="/login" element={<Navigate to="/auth/login" replace />} />
+        <Route path="/register" element={<Navigate to="/auth/register" replace />} />
 
         <Route 
           path="/" 
@@ -51,7 +54,7 @@ export default function AppRoutes() {
           <Route path="configuracion" element={<SettingsPage />} />
         </Route>
 
-        <Route path="*" element={<Navigate to="/login" replace />} />
+        <Route path="*" element={<Navigate to="/auth/login" replace />} />
       </Routes>
     </BrowserRouter>
   );
