@@ -1,6 +1,7 @@
 // src/app/routes/AppRoutes.jsx
 import { Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
+import ProfileRoutes from './ProfileRoutes';
 
 /**
  * Router principal de la aplicación - Versión temporal
@@ -31,6 +32,7 @@ export default function AppRoutes() {
         <Route path="reportes" element={<ReportsPage />} />
         <Route path="comentarios" element={<FeedbackPage />} />
         <Route path="configuracion" element={<SettingsPage />} />
+        <Route path="perfil/*" element={<ProfileRoutes />} />
       </Route>
     </Routes>
   );

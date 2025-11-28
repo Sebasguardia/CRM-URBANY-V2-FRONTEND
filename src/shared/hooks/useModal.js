@@ -1,31 +1,13 @@
-import { useState, useCallback } from 'react';
-import { useUIStore } from '../store/ui.slice';
+// src/shared/hooks/useModal.js
+import { useState } from 'react';
 
-export const useModal = (modalId) => {
-  const { modals, openModal, closeModal } = useUIStore();
+const useModal = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const isOpen = modals[modalId] || false;
+  const open = () => setIsOpen(true);
+  const close = () => setIsOpen(false);
 
-  const open = useCallback(() => {
-    openModal(modalId);
-  }, [openModal, modalId]);
-
-  const close = useCallback(() => {
-    closeModal(modalId);
-  }, [closeModal, modalId]);
-
-  const toggle = useCallback(() => {
-    if (isOpen) {
-      close();
-    } else {
-      open();
-    }
-  }, [isOpen, open, close]);
-
-  return {
-    isOpen,
-    open,
-    close,
-    toggle
-  };
+  return { isOpen, open, close };
 };
+
+export default useModal;

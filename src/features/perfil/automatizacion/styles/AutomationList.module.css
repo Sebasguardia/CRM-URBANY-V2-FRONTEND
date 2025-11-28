@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.automationCard {
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: white;
+  min-height: 240px;
+  position: relative;
+}
+
+.automationCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: #D1D5DB;
+}
+
+.selected {
+  border: 2px solid #3B82F6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.badge {
+  align-self: flex-end;
+  background: #E5E7EB;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #4B5563;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.visualDiagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 32px 0;
+  width: 100%;
+}
+
+.iconBox {
+  width: 48px;
+  height: 64px;
+  background: #F3F4F6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.dashedLine {
+  flex: 1;
+  height: 0;
+  border-top: 2px dashed #D1D5DB;
+  margin: 0 -4px;
+  /* Slight overlap */
+  z-index: 1;
+  position: relative;
+}
+
+/* Create the L-shape line effect if needed, but simple straight line for now as per image 0 mostly shows straight or simple connection */
+/* Image 0 shows a dotted line connecting the two icons. */
+
+.cardFooter {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  border-top: 1px solid #F3F4F6;
+  padding-top: 16px;
+  line-height: 1.5;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}

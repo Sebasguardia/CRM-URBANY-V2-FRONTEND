@@ -1,5 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import MainLayout from '../../shared/components/Layout/MainLayout';
+
+import AutomationPage from '../../features/perfil/automatizacion/pages/AutomationPage';
+import AppRoutes from './AppRoutes';
 
 /**
  * Router para las secciones del perfil
@@ -7,31 +9,23 @@ import MainLayout from '../../shared/components/Layout/MainLayout';
 export default function ProfileRoutes() {
     return (
         <Routes>
-            <Route element={<MainLayout />}>
+            
                 <Route path="miperfil" element={<MiPerfil />} />
                 <Route path="perfil-inmobiliaria" element={<RealEstatePage />} />
                 <Route path="integraciones" element={<IntegrationsPage />} />
                 <Route path="gestion-usuarios" element={<ManagementPage />} />
                 <Route path="automatizacion" element={<AutomationPage />} />
                 <Route path="optimizaciones" element={<OptimizationsPage />} />
-                
+
                 <Route path="blog" element={<BlogPage />} />
                 <Route path="ayuda" element={<HelpPage />} />
-            </Route>
+                <Route path="/perfil" element={<AppRoutes />} />
+            
         </Routes>
     );
 }
 
 // Componentes temporales para las secciones del perfil
-function AutomationPage() {
-    return (
-        <div>
-            <h2 className="text-xl font-bold mb-4">Automatización</h2>
-            <p>Configuración de automatizaciones - En desarrollo</p>
-        </div>
-    );
-}
-
 function HelpPage() {
     return (
         <div>
