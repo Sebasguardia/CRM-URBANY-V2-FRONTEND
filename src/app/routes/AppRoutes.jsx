@@ -1,6 +1,7 @@
 // src/app/routes/AppRoutes.jsx
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
+import MapsPage1 from '../../features/mapas/pages/Mapa';
 
 /**
  * Router principal de la aplicación - Versión temporal
@@ -26,7 +27,7 @@ export default function AppRoutes() {
           <Route path="negocios/:id" element={<DealDetailPage />} />
           <Route path="mensajes" element={<MessagesPage />} />
           <Route path="redes" element={<NetworkPage />} />
-          <Route path="mapas" element={<MapsPage />} />
+          <Route path="mapas" element={<MapsPage1 />} />
           <Route path="emprendimientos" element={<ProjectsPage />} />
           <Route path="contactos" element={<ContactsPage />} />
           <Route path="reportes" element={<ReportsPage />} />

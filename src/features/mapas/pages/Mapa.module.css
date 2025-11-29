@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap');
+
+.H  {
+  font-weight: 600;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.mainHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  padding: 0.5rem;
+  color: #ffffff !important;
+  background-color: #3A4962 !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem !important;
+  border: none;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  margin: 0rem 0rem 0rem 0rem !important;
+  font-family: 'Be Vietnam Pro', sans-serif !important;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 100%;
+  min-width: 0;
+  height: 2.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  padding: 0 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.searchContainer:focus-within {
+  background-color: #ffffff;
+  border-color: #d1d5db;
+}
+
+.searchIcon {
+  color: #9ca3af;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  margin-left: 0.75rem;
+  width: 100%;
+  font-size: 0.875rem;
+  color: #4b5563;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+}
+
+.dropDown{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+} 
+
+.dropDownButton {
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+     transition: all 0.2s ease-out;
+
+  animation: EntradaCard 0.5s ease-in-out;
+}
+
+@keyframes EntradaCard {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dropDownButton:hover {
+  transform: translateY(-0.2rem);
+}
+
+.cardsMap {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0rem 0rem 0rem;
+    width: 100%;
+}
+
+.cards {
+    flex: 1;
+}
+
+.MapaAvanzado {
+    flex: 1;
+}

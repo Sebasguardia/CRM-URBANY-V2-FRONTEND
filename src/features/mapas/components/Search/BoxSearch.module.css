@@ -1,0 +1,53 @@
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 100%;
+  min-width: 0;
+  height: 2.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  padding: 0 1rem;
+  transition: all 0.2s ease-in-out;
+  animation: EntradaCard 0.5s ease-in-out;
+}
+
+@keyframes EntradaCard {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.searchContainer:focus-within {
+  background-color: #ffffff;
+  border-color: #d1d5db;
+}
+
+.searchIcon {
+  color: #9ca3af;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  margin-left: 0.75rem;
+  width: 100%;
+  font-size: 0.875rem;
+  color: #4b5563;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+}
