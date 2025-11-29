@@ -4,6 +4,7 @@
   background-color: #fafafa;
   overflow-x: hidden;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .sidebarDesktop {
@@ -89,6 +90,7 @@
   max-width: 100%;
   overflow-x: hidden;
   margin-top: 70px;
+  box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {

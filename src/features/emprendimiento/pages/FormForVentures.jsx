@@ -38,29 +38,22 @@ export default function FormForVentures() {
   };
 
   const handleStepClick = (stepNumber) => {
-    // Solo permite navegar a pasos completados o al siguiente paso después del último completado
-    if (stepNumber <= Math.max(...completedSteps, 0) + 1) {
-      setCurrentStep(stepNumber);
-    }
+    setCurrentStep(stepNumber);
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.stepNavigation}>
-        {steps.map((step) => {
-          const isAccessible = step.number <= Math.max(...completedSteps, 0) + 1;
-          return (
-            <div
-              key={step.number}
-              className={`${styles.step} ${currentStep === step.number ? styles.active : ''} ${completedSteps.includes(step.number) ? styles.completed : ''} ${!isAccessible ? styles.disabled : ''}`}
-              onClick={() => handleStepClick(step.number)}
-              style={{ cursor: isAccessible ? 'pointer' : 'not-allowed' }}
-            >
-              <div className={styles.stepNumber}>{step.number}</div>
-              <span className={styles.stepLabel}>{step.label}</span>
-            </div>
-          );
-        })}
+        {steps.map((step) => (
+          <div
+            key={step.number}
+            className={`${styles.step} ${currentStep === step.number ? styles.active : ''} ${completedSteps.includes(step.number) ? styles.completed : ''}`}
+            onClick={() => handleStepClick(step.number)}
+          >
+            <div className={styles.stepNumber}>{step.number}</div>
+            <span className={styles.stepLabel}>{step.label}</span>
+          </div>
+        ))}
       </div>
 
       <div className={styles.content}>
