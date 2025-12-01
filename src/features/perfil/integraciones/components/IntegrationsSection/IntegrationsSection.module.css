@@ -1,0 +1,22 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.itemWrapper {
+  animation: itemFadeInUp 0.28s ease-out forwards;
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+@keyframes itemFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

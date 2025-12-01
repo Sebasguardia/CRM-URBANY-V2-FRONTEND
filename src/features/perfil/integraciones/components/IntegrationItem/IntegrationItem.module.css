@@ -1,0 +1,507 @@
+.wrapper {
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04);
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+  font-family: Be Vietnam Pro,sans-serif;
+  transition:
+    box-shadow 0.18s ease,
+    transform 0.12s ease,
+    border-color 0.18s ease;
+}
+
+.wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.calendarWrapper {
+  padding: 1.2rem 1.4rem;
+}
+
+.emailWrapper {
+  padding: 1.2rem 1.4rem;
+}
+
+.networksWrapper {
+  padding: 1.2rem 1.4rem;
+}
+
+/* Email Marketing / MyPerfit */
+
+.emailMarketingWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.1rem;
+}
+
+.emailMarketingMain {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.myPerfitIcon {
+  width: 32px;
+  height: 32px;
+  filter: grayscale(1);
+  opacity: 0.9;
+  object-fit: contain;
+}
+
+.emailMarketingActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.configureBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #ffe4f0;
+  color: #ec4899;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.configureBadge:hover {
+  background-color: #fed7e9;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: transparent;
+  border: none;
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  font-family: Be Vietnam Pro,sans-serif;
+  cursor: pointer;
+}
+
+.leftBlock {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.arrowIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  transition: transform 0.18s ease;
+}
+
+.arrowIconOpen {
+  transform: rotate(90deg);
+}
+
+
+.portalIconImage {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.9;
+}
+
+.portalSocialIconImage {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.9;
+}
+
+.UrbanyIconImage {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.CalendarIconImage {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.description {
+  margin-top: 0.15rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.actionLabel {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #2563eb;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.26s ease-out,
+    opacity 0.22s ease-out,
+    transform 0.22s ease-out;
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.contentOpen {
+  max-height: 520px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contentInner {
+  padding: 1rem 1.1rem 1.1rem;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  text-align: left;
+}
+
+.contentText {
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.calendarLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.networksLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.emailContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.emailIntro {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+.emailBulletList {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.emailBullet {
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+.emailBullet::marker {
+  color: #22c55e;
+}
+
+.networksGraphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.networksPlanet {
+  width: 200px;
+  height: 200px;
+  animation: floatPlanet 2.4s ease-in-out infinite;
+}
+
+.calendarCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.calendarSubtitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.calendarFooter {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.calendarActionsInline {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.calendarActionsBlock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.primaryButton {
+  display: inline-flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #1d4ed8;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+.primaryButton:hover {
+  background-color: #1e40af;
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.secondaryButton:hover {
+  background-color: #eff6ff;
+}
+
+.bulletList {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.bulletList li::marker {
+  color: #22c55e;
+}
+
+.calendarGraphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroIcon {
+  width: 80px;
+  height: 80px;
+  color: #2563eb;
+  stroke-width: 1.4;
+}
+
+.heroIconCalendar {
+  color: #16a34a;
+}
+
+.richTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.emailMarketingConfig {
+  padding: 1.3rem 1.4rem;
+}
+
+.emailMarketingConfigHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.emailMarketingConfigTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.25rem;
+}
+
+.emailMarketingConfigSubtitle {
+  font-size: 0.88rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.myPerfitIconLarge {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.emailMarketingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 420px;
+}
+
+.detailTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.15rem;
+}
+
+.detailParagraph {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin: 0 0 0.4rem;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+.radioOption input[type="radio"] {
+  margin-top: 0.15rem;
+  margin-bottom: 1rem;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  cursor:pointer;
+  border-radius: 999px;
+  border: 2px solid #d1d5db;
+  box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.35);
+  transition:
+    border-color 0.16s ease-out,
+    box-shadow 0.26s ease-out,
+    background-color 0.16s ease-out;
+}
+
+.radioOption input[type="radio"]:checked {
+  border-color: #006bff;
+  background-color: #006bff; /* círculo azul sólido central */
+  box-shadow:
+    0 0 0 3px #ffffff, /* anillo blanco intermedio */
+    0 0 0 6px rgba(0, 107, 255, 0.25); /* anillo azul claro exterior */
+}
+
+.buttonSeparator {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.secondaryButtonBlue {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.secondaryButtonBlue:hover {
+  background-color: #eff6ff;
+}
+
+@keyframes floatPlanet {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.formBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 460px;
+}
+
+.formLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.82rem;
+  color: #111827;
+}
+
+.formInput {
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #bfdbfe;
+}
+
+.placeholderCardContent {
+  font-size: 0.8rem;
+  color: #4b5563;
+}

@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from '../../shared/components/Layout/MainLayout';
+import IntegrationsPage from '../../features/perfil/integraciones/pages/IntegrationsPage';
 
 /**
  * Router para las secciones del perfil
@@ -64,15 +65,6 @@ function RealEstatePage() {
         <div>
             <h2 className="text-xl font-bold mb-4">Perfil de la Inmobiliaria</h2>
             <p>Configuración de la inmobiliaria - En desarrollo</p>
-        </div>
-    );
-}
-
-function IntegrationsPage() {
-    return (
-        <div>
-            <h2 className="text-xl font-bold mb-4">Integraciones</h2>
-            <p>Gestión de integraciones - En desarrollo</p>
         </div>
     );
 }
