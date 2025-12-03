@@ -9,25 +9,28 @@ export default function MainLayout() {
   const location = useLocation();
 
   // Mapeo de rutas a títulos
-  const pageTitle = useMemo(() => {
-    const path = location.pathname;
-    const titleMap = {
-      '/dashboard': 'Dashboard',
-      '/actividades': 'Actividades',
-      '/tasaciones': 'Tasaciones',
-      '/propiedades': 'Propiedades',
-      '/negocios': 'Negocios',
-      '/mensajes': 'Mensajes',
-      '/redes': 'Redes',
-      '/mapas': 'Mapas',
-      '/emprendimientos': 'Emprendimientos',
-      '/contactos': 'Contactos',
-      '/reportes': 'Reportes',
-      '/comentarios': 'Enviar comentarios',
-      '/configuracion': 'Configuración',
-    };
-    return titleMap[path] || 'Dashboard';
-  }, [location.pathname]);
+    const pageTitle = useMemo(() => {
+      const path = location.pathname;
+      const titleMap = {
+        '/dashboard': 'Dashboard',
+        '/actividades': 'Actividades',
+        '/tasaciones': 'Tasaciones',
+        '/propiedades': 'Propiedades',
+        '/negocios': 'Negocios',
+        '/mensajes': 'Mensajes',
+        '/redes': 'Redes',
+        '/mapas': 'Mapas',
+        '/emprendimientos': 'Emprendimientos',
+        '/contactos': 'Contactos',
+        '/reportes': 'Reportes',
+        '/comentarios': 'Enviar comentarios',
+        '/configuracion': 'Configuración',
+        '/perfil-inmobiliaria': 'perfil',
+        '/miperfil': 'perfil',
+        '/integraciones': 'perfil',
+      };
+      return titleMap[path] || 'Dashboard';
+    }, [location.pathname]);
 
   return (
     <div className={styles.layout}>
